@@ -1,0 +1,19 @@
+01/06/25:
+---->Sample.js:
+const Root = document.getElementById('root');
+const heading = document.createElement('h1');
+heading.textContent = "🚀Nextflix-GPT"
+Root.appendChild(heading);
+---->App.js Intial Satge:
+import React from "react";
+import ReactDOM from 'react-dom/client';
+
+const App = () =>{
+    return(
+        <div>
+            <h1>🚀Netflix-GPT from React</h1>
+        </div>
+    )
+}
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)

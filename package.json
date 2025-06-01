@@ -1,0 +1,27 @@
+{
+  "name": "netflix-gpt",
+  "version": "1.0.0",
+  "description": "Netflix with movie suggestions",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dileep0607/Netflix-GPT.git"
+  },
+  "author": "Dileep Kanth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dileep0607/Netflix-GPT/issues"
+  },
+  "homepage": "https://github.com/Dileep0607/Netflix-GPT#readme",
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.1.8",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.8"
+  },
+  "devDependencies": {
+    "parcel": "^2.15.2"
+  }
+}
