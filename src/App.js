@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDOM from 'react-dom/client';
+import Body from "./components/Body.js";
 
 const App = () =>{
     return(
-        <div className="text-red-700 bg-black">
-            <h1>🚀Netflix-GPT from React</h1>
+        <div>
+            <Body />
         </div>
     )
 }

@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Netflix with movie suggestions",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "npx parcel index.html"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
     "tailwindcss": "^4.1.8"
   },
   "devDependencies": {
-    "parcel": "^2.15.2"
+    "parcel": "^2.15.2",
+    "react-router-dom": "^6.22.3"
   }
 }

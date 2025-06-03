@@ -1,6 +1,10 @@
 
 # Netflix-GPT
-
+    --Parcel setup
+    --Configured Tailwind
+    --Header
+    --Login Form
+    --Sign Up Form
 # React Set-Up:
 Commands Flow:
     npm init (or) npm init -y
