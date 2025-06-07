@@ -3,8 +3,11 @@
     --Parcel setup
     --Configured Tailwind
     --Header
+    --Routing of App
     --Login Form
     --Sign Up Form
+    --Form Validation
+    --useRef Hook
 # React Set-Up:
 Commands Flow:
     npm init (or) npm init -y

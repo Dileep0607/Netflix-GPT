@@ -16186,18 +16186,30 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _links = require("../utils/Links");
 var _header = require("./Header");
 var _headerDefault = parcelHelpers.interopDefault(_header);
+var _validate = require("../utils/Validate");
 var _s = $RefreshSig$();
 const Login = ()=>{
     _s();
     const [isSignIn, setIsSignIn] = (0, _react.useState)(true);
-    const handleSignUp = ()=>{
+    const [errorMessage, setErrorMessage] = (0, _react.useState)();
+    const email = (0, _react.useRef)(null);
+    const password = (0, _react.useRef)(null);
+    const handleButtonClick = ()=>{
+        //validate form submission
+        console.log(email.current.value);
+        console.log(password.current.value);
+        const message = (0, _validate.checkValidateData)(email.current.value, password.current.value);
+        setErrorMessage(message);
+    //console.log(message);
+    };
+    const toggleSignUp = ()=>{
         setIsSignIn(!isSignIn);
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
                 fileName: "src/components/Login.js",
-                lineNumber: 14,
+                lineNumber: 29,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -16208,15 +16220,16 @@ const Login = ()=>{
                     className: "relative w-full h-full object-cover scale-125"
                 }, void 0, false, {
                     fileName: "src/components/Login.js",
-                    lineNumber: 16,
+                    lineNumber: 31,
                     columnNumber: 13
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/Login.js",
-                lineNumber: 15,
+                lineNumber: 30,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
+                onSubmit: (e)=>e.preventDefault(),
                 className: "w-3/12 absolute p-12 my-36 mx-auto right-0 left-0 bg-black opacity-80 text-white",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
@@ -16224,7 +16237,7 @@ const Login = ()=>{
                         children: isSignIn ? "Sign In" : "Sign Up"
                     }, void 0, false, {
                         fileName: "src/components/Login.js",
-                        lineNumber: 19,
+                        lineNumber: 35,
                         columnNumber: 13
                     }, undefined),
                     !isSignIn && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -16233,58 +16246,69 @@ const Login = ()=>{
                         className: "w-full border border-gray-500 p-4 my-3"
                     }, void 0, false, {
                         fileName: "src/components/Login.js",
-                        lineNumber: 21,
-                        columnNumber: 27
+                        lineNumber: 38,
+                        columnNumber: 14
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        ref: email,
                         type: "email",
                         placeholder: "Email Address",
                         className: "w-full border border-gray-500 p-4 my-3"
                     }, void 0, false, {
                         fileName: "src/components/Login.js",
-                        lineNumber: 23,
+                        lineNumber: 42,
                         columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        ref: password,
                         type: "password",
                         placeholder: "Password",
                         className: "w-full border border-gray-500 p-4 my-3"
                     }, void 0, false, {
                         fileName: "src/components/Login.js",
-                        lineNumber: 25,
+                        lineNumber: 47,
+                        columnNumber: 13
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: "text-red-600 font-bold text-lg py-2",
+                        children: errorMessage
+                    }, void 0, false, {
+                        fileName: "src/components/Login.js",
+                        lineNumber: 52,
                         columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                         className: "w-full rounded-lg bg-red-700 p-4 my-2 font-medium",
+                        onClick: handleButtonClick,
                         children: isSignIn ? "Sign In" : "Sign Up"
                     }, void 0, false, {
                         fileName: "src/components/Login.js",
-                        lineNumber: 27,
+                        lineNumber: 53,
                         columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                         className: "py-4 cursor-pointer",
-                        onClick: handleSignUp,
+                        onClick: toggleSignUp,
                         children: isSignIn ? `New to Netflix? Sign Up Now` : `Already Registered! Sign In Now...`
                     }, void 0, false, {
                         fileName: "src/components/Login.js",
-                        lineNumber: 30,
+                        lineNumber: 57,
                         columnNumber: 13
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Login.js",
-                lineNumber: 18,
+                lineNumber: 33,
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/Login.js",
-        lineNumber: 13,
+        lineNumber: 28,
         columnNumber: 5
     }, undefined);
 };
-_s(Login, "+4FHSj6XMyrzDHuLKzNF9t1x758=");
+_s(Login, "6F/lmj1zDAz7ZEYSh5rJV/n5E2M=");
 _c = Login;
 exports.default = Login;
 var _c;
@@ -16295,7 +16319,7 @@ $RefreshReg$(_c, "Login");
   globalThis.$RefreshReg$ = prevRefreshReg;
   globalThis.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","../utils/Links":"8jgDl","./Header":"3PJ6N","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"8jgDl":[function(require,module,exports,__globalThis) {
+},{"react/jsx-dev-runtime":"dVPUn","react":"jMk1U","../utils/Links":"8jgDl","./Header":"3PJ6N","../utils/Validate":"krcDE","@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"7h6Pi"}],"8jgDl":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "BGIMG_URL", ()=>BGIMG_URL);
@@ -18652,6 +18676,20 @@ function $da9882e673ac146b$var$ErrorOverlay() {
     });
     return null;
 }
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"krcDE":[function(require,module,exports,__globalThis) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "checkValidateData", ()=>checkValidateData);
+const checkValidateData = (email, password)=>{
+    //There is test() function for regex
+    const isEmailValid = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/.test(email);
+    const isPasswordValid = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/.test(password);
+    if (!isEmailValid) return "Email is not valid";
+    if (!isPasswordValid) return "Password is not valid";
+    //if there is no error return null.
+    return null;
+};
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"jnFvT"}],"jL14U":[function(require,module,exports,__globalThis) {
 var $parcel$ReactRefreshHelpers$72f1 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
