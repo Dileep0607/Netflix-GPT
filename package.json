@@ -4,7 +4,8 @@
   "description": "Netflix with movie suggestions",
   "scripts": {
     "test": "jest",
-    "start": "npx parcel index.html"
+    "start": "npx parcel index.html",
+     "build": "parcel build index.html"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   "homepage": "https://github.com/Dileep0607/Netflix-GPT#readme",
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.8",
+    "firebase": "^11.9.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "tailwindcss": "^4.1.8"

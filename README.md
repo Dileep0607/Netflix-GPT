@@ -8,6 +8,13 @@
     --Sign Up Form
     --Form Validation
     --useRef Hook
+    --SetUp Authentication
+
+# Authentication commands set-up:
+    0.install firebase CLI - `npm i -g firebase-tools`
+    1.Firebase Login - `firebase login`
+    2.Firebase initialize - `firebase init` then select hosting
+    3.Firebase deploy - `firebase deploy`
 # React Set-Up:
 Commands Flow:
     npm init (or) npm init -y

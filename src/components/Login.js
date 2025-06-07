@@ -2,6 +2,8 @@ import React, { useRef, useState } from 'react'
 import { BGIMG_URL } from '../utils/Links'
 import Header from './Header'
 import { checkValidateData } from '../utils/Validate';
+import {createUserWithEmailAndPassword,signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../utils/Firebase';
 
 const Login = () => {
 
@@ -12,13 +14,43 @@ const Login = () => {
   const password = useRef(null);
 
   const handleButtonClick = () =>{
-    //validate form submission
-    console.log(email.current.value);
-    console.log(password.current.value);
 
     const message = checkValidateData(email.current.value,password.current.value);
     setErrorMessage(message);
-    //console.log(message);
+
+    if(message) return;
+
+    if(!isSignIn)
+    {
+      //Sign Up
+      createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
+      .then((userCredential) => {
+      // Signed up 
+      const user = userCredential.user;
+      console.log(user)
+      // ...
+      })
+      .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      setErrorMessage(errorCode + " " +errorMessage);
+    // ..
+      });
+    }
+    else{
+      //Sign In
+      signInWithEmailAndPassword(auth,email.current.value,password.current.value)
+      .then((userCredential) => {
+    // Signed in 
+      const user = userCredential.user;
+    // ...
+      })
+      .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      setErrorMessage(errorCode + " " +errorMessage);
+     });
+    }
   }
 
   const toggleSignUp = () =>{
@@ -50,7 +82,7 @@ const Login = () => {
             placeholder='Password' 
             className='w-full border border-gray-500 p-4 my-3' />
             <p className='text-red-600 font-bold text-lg py-2'>{errorMessage}</p>
-            <button className='w-full rounded-lg bg-red-700 p-4 my-2 font-medium'
+            <button className='w-full rounded-lg bg-red-700 p-4 my-2 font-medium cursor-pointer'
             onClick={handleButtonClick}>
               {isSignIn ? "Sign In" : "Sign Up"}
               </button>
